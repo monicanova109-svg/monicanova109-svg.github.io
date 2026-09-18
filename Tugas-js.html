@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tugas JavaScript | Monica Nova Yanti Marbun</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: "DM Sans", sans-serif;
+            background-color: #fffaf5;
+        }
+
+        .font-display {
+            font-family: "Playfair Display", serif;
+        }
+
+        /* Background grid seperti pada desain contoh */
+        .grid-bg {
+            background-color: #fffaf5;
+            background-image:
+                linear-gradient(#eadfd6 1px, transparent 1px),
+                linear-gradient(90deg, #eadfd6 1px, transparent 1px);
+            background-size: 48px 48px;
+        }
+
+        .input-style {
+            background-color: #fffaf5;
+            border: 1px solid #eadfd6;
+        }
+
+        .input-style:focus {
+            outline: none;
+            border-color: #b78a8a;
+            box-shadow: 0 0 0 3px rgba(183, 138, 138, 0.12);
+        }
+    </style>
+</head>
+
+
+<body class="font-sans text-ink antialiased">
+
+    <!-- NAVBAR -->
+    <header class="sticky top-0 z-40 bg-paper/90 backdrop-blur border-b border-line">
+        <nav class="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
+
+            <a href="index.html" class="flex items-center gap-2 font-display text-lg font-medium">
+                <span class="w-8 h-8 rounded-full border-2 border-ink flex items-center justify-center text-sm">
+                    V
+                </span>
+                Vaa.dev
+            </a>
+
+           <ul class="flex items-center gap-8 text-sm font-medium">
+
+    <li>
+        <a href="index.html" class="hover:text-accent">
+            Beranda
+        </a>
+    </li>
+
+    <li>
+        <a href="about.html" class="text-accent">
+            Tentang
+        </a>
+    </li>
+
+    <li>
+        <a href="projek.html" class="hover:text-accent">
+            Projek
+        </a>
+    </li>
+
+    <li>
+        <a href="Tugas-js.html" class="hover:text-accent">
+            Tugas JS
+        </a>
+    </li>
+
+    <li>
+        <a href="contact.html" class="hover:text-accent">
+            Kontak
+        </a>
+    </li>
+
+</ul>
+
+        </nav>
+    </header>
+
+
+
+
+    <!-- ================= HEADER ================= -->
+
+    <section class="max-w-6xl mx-auto px-6 pt-8 pb-10">
+
+        <p class="text-[#c98787] font-mono text-[16px] mb-4">
+            Tugas JavaScript
+        </p>
+
+
+        <h1 class="font-display text-5xl md:text-6xl text-[#302525] leading-tight">
+            Pelacak Tugas Kuliah
+        </h1>
+
+
+        <p class="mt-5 text-[18px] text-[#756969] max-w-3xl leading-relaxed">
+
+            Aplikasi kecil untuk mencatat tugas kuliah lengkap
+            dengan tenggat waktu dan prioritas. Dibangun dengan
+            JavaScript murni — tanpa framework — dan menyimpan
+            data di
+
+            <code class="bg-white border border-[#eadfd6] px-2 py-1 rounded">
+                localStorage
+            </code>
+
+            browser, jadi data tetap tersimpan walaupun halaman
+            ditutup dan dibuka lagi.
+
+        </p>
+
+    </section>
+
+
+
+    <!-- ================= APLIKASI ================= -->
+
+    <main class="max-w-6xl mx-auto px-6 pb-20">
+
+
+        <div class="bg-white border border-[#eadfd6] rounded-2xl shadow-sm p-7 md:p-9">
+
+
+            <!-- FORM TAMBAH TUGAS -->
+
+            <form id="taskForm"
+                  class="grid md:grid-cols-[1.5fr_1fr_1fr_auto] gap-3">
+
+
+                <!-- NAMA TUGAS -->
+
+                <input
+                    type="text"
+                    id="taskInput"
+                    placeholder="Nama tugas, mis. Laporan Praktikum"
+                    class="input-style rounded-xl px-5 py-4 text-[16px]"
+                >
+
+
+                <!-- TANGGAL -->
+
+                <input
+                    type="date"
+                    id="dateInput"
+                    class="input-style rounded-xl px-5 py-4 text-[16px]"
+                >
+
+
+                <!-- PRIORITAS -->
+
+                <select
+                    id="priorityInput"
+                    class="input-style rounded-xl px-5 py-4 text-[16px]">
+
+                    <option value="Sedang">
+                        Prioritas sedang
+                    </option>
+
+                    <option value="Tinggi">
+                        Prioritas tinggi
+                    </option>
+
+                    <option value="Rendah">
+                        Prioritas rendah
+                    </option>
+
+                </select>
+
+
+                <!-- BUTTON -->
+
+                <button
+                    type="submit"
+                    class="bg-[#493334] text-white px-7 py-4 rounded-xl font-semibold hover:bg-[#624848] transition">
+
+                    Tambah
+
+                </button>
+
+            </form>
+
+
+
+            <!-- ================= STATISTIK ================= -->
+
+            <div class="grid md:grid-cols-3 gap-4 mt-7">
+
+
+                <!-- TOTAL -->
+
+                <div class="bg-[#fffaf5] border border-[#eadfd6] rounded-xl p-5 text-center">
+
+                    <p id="totalCount"
+                       class="font-display text-3xl font-semibold text-[#3b2d2d]">
+                        0
+                    </p>
+
+                    <p class="text-[#9b8d8d] mt-1">
+                        Total
+                    </p>
+
+                </div>
+
+
+                <!-- BELUM SELESAI -->
+
+                <div class="bg-[#fffaf5] border border-[#eadfd6] rounded-xl p-5 text-center">
+
+                    <p id="activeCount"
+                       class="font-display text-3xl font-semibold text-[#3b2d2d]">
+                        0
+                    </p>
+
+                    <p class="text-[#9b8d8d] mt-1">
+                        Belum selesai
+                    </p>
+
+                </div>
+
+
+                <!-- SELESAI -->
+
+                <div class="bg-[#fffaf5] border border-[#eadfd6] rounded-xl p-5 text-center">
+
+                    <p id="completedCount"
+                       class="font-display text-3xl font-semibold text-[#3b2d2d]">
+                        0
+                    </p>
+
+                    <p class="text-[#9b8d8d] mt-1">
+                        Selesai
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================= FILTER ================= -->
+
+            <div class="flex flex-wrap items-center justify-between gap-4 mt-7">
+
+
+                <div class="flex gap-2">
+
+
+                    <button
+                        onclick="ubahFilter('semua')"
+                        id="filterSemua"
+                        class="filter-btn px-5 py-2.5 rounded-full bg-[#493334] text-white font-medium">
+
+                        Semua
+
+                    </button>
+
+
+                    <button
+                        onclick="ubahFilter('aktif')"
+                        id="filterAktif"
+                        class="filter-btn px-5 py-2.5 rounded-full border border-[#eadfd6] text-[#594b4b] hover:bg-[#fffaf5]">
+
+                        Aktif
+
+                    </button>
+
+
+                    <button
+                        onclick="ubahFilter('selesai')"
+                        id="filterSelesai"
+                        class="filter-btn px-5 py-2.5 rounded-full border border-[#eadfd6] text-[#594b4b] hover:bg-[#fffaf5]">
+
+                        Selesai
+
+                    </button>
+
+                </div>
+
+
+                <button
+                    onclick="hapusSelesai()"
+                    class="text-[#9b8d8d] hover:text-red-500 transition">
+
+                    Hapus yang selesai
+
+                </button>
+
+            </div>
+
+
+
+            <!-- ================= DAFTAR TUGAS ================= -->
+
+            <div id="taskList" class="mt-8 space-y-3">
+
+
+                <div id="emptyMessage"
+                     class="text-center py-16 text-[#aa9d9d]">
+
+                    Belum ada tugas di sini.
+                    Tambahkan satu lewat form di atas.
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="border-t border-[#eadfd6] bg-[#fffaf5]">
+
+        <div class="max-w-6xl mx-auto px-6 py-7 text-center">
+
+            <p class="text-sm text-[#9b8d8d]">
+                © 2026 Natasya Olivia Karlolina Pangaribuan
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        // Mengambil data dari localStorage
+        let tugas =
+            JSON.parse(
+                localStorage.getItem("tugasNatasya")
+            ) || [];
+
+
+        // Filter awal
+        let filterSekarang = "semua";
+
+
+
+        // ================= TAMBAH TUGAS =================
+
+        document
+            .getElementById("taskForm")
+            .addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+
+                const nama =
+                    document.getElementById("taskInput")
+                    .value.trim();
+
+
+                const tanggal =
+                    document.getElementById("dateInput")
+                    .value;
+
+
+                const prioritas =
+                    document.getElementById("priorityInput")
+                    .value;
+
+
+                // Validasi
+                if (nama === "") {
+
+                    alert("Silakan masukkan nama tugas.");
+
+                    return;
+
+                }
+
+
+                // Membuat tugas baru
+                const tugasBaru = {
+
+                    id: Date.now(),
+
+                    nama: nama,
+
+                    tanggal: tanggal,
+
+                    prioritas: prioritas,
+
+                    selesai: false
+
+                };
+
+
+                // Menambahkan ke array
+                tugas.push(tugasBaru);
+
+
+                // Menyimpan
+                simpanData();
+
+
+                // Mengosongkan form
+                document.getElementById("taskInput").value = "";
+
+                document.getElementById("dateInput").value = "";
+
+                document.getElementById("priorityInput").value = "Sedang";
+
+
+                // Menampilkan
+                tampilkanTugas();
+
+            });
+
+
+
+        // ================= MENAMPILKAN TUGAS =================
+
+        function tampilkanTugas() {
+
+            const list =
+                document.getElementById("taskList");
+
+
+            list.innerHTML = "";
+
+
+            let dataTugas = tugas;
+
+
+
+            // Filter aktif
+            if (filterSekarang === "aktif") {
+
+                dataTugas =
+                    tugas.filter(function(item) {
+
+                        return !item.selesai;
+
+                    });
+
+            }
+
+
+
+            // Filter selesai
+            if (filterSekarang === "selesai") {
+
+                dataTugas =
+                    tugas.filter(function(item) {
+
+                        return item.selesai;
+
+                    });
+
+            }
+
+
+
+            // Jika kosong
+            if (dataTugas.length === 0) {
+
+                list.innerHTML = `
+
+                    <div class="text-center py-16 text-[#aa9d9d]">
+
+                        Belum ada tugas di sini.
+                        Tambahkan satu lewat form di atas.
+
+                    </div>
+
+                `;
+
+            }
+
+
+
+            // Membuat setiap tugas
+            dataTugas.forEach(function(item) {
+
+
+                const div =
+                    document.createElement("div");
+
+
+                div.className =
+                    "flex flex-wrap md:flex-nowrap items-center justify-between gap-4 p-5 rounded-xl border border-[#eadfd6] bg-[#fffaf5]";
+
+
+                let warnaPrioritas =
+                    "bg-[#f3e8e3] text-[#765b55]";
+
+
+                if (item.prioritas === "Tinggi") {
+
+                    warnaPrioritas =
+                        "bg-[#f5dddd] text-[#9a4d4d]";
+
+                }
+
+
+                if (item.prioritas === "Rendah") {
+
+                    warnaPrioritas =
+                        "bg-[#e8eee7] text-[#59705b]";
+
+                }
+
+
+                div.innerHTML = `
+
+                    <div class="flex items-center gap-4 flex-1">
+
+                        <input
+                            type="checkbox"
+                            ${item.selesai ? "checked" : ""}
+                            onchange="ubahStatus(${item.id})"
+                            class="w-5 h-5 accent-[#493334] cursor-pointer"
+                        >
+
+
+                        <div>
+
+                            <p class="${
+                                item.selesai
+                                ? "line-through text-[#aaa0a0]"
+                                : "text-[#493b3b] font-medium"
+                            }">
+
+                                ${item.nama}
+
+                            </p>
+
+
+                            ${
+                                item.tanggal
+                                ?
+                                `<p class="text-sm text-[#9b8d8d] mt-1">
+                                    Tenggat: ${formatTanggal(item.tanggal)}
+                                </p>`
+                                :
+                                ""
+                            }
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="flex items-center gap-3">
+
+
+                        <span class="text-xs px-3 py-1.5 rounded-full ${warnaPrioritas}">
+
+                            ${item.prioritas}
+
+                        </span>
+
+
+                        <button
+                            onclick="hapusTugas(${item.id})"
+                            class="text-[#a99b9b] hover:text-red-500 text-lg">
+
+                            ✕
+
+                        </button>
+
+                    </div>
+
+                `;
+
+
+                list.appendChild(div);
+
+            });
+
+
+            // Update statistik
+            updateStatistik();
+
+        }
+
+
+
+        // ================= FORMAT TANGGAL =================
+
+        function formatTanggal(tanggal) {
+
+            const date =
+                new Date(tanggal + "T00:00:00");
+
+
+            return date.toLocaleDateString(
+                "id-ID",
+                {
+                    day: "2-digit",
+                    month: "2-digit",
+                    year: "numeric"
+                }
+            );
+
+        }
+
+
+
+        // ================= UBAH STATUS =================
+
+        function ubahStatus(id) {
+
+            tugas =
+                tugas.map(function(item) {
+
+                    if (item.id === id) {
+
+                        item.selesai =
+                            !item.selesai;
+
+                    }
+
+                    return item;
+
+                });
+
+
+            simpanData();
+
+            tampilkanTugas();
+
+        }
+
+
+
+        // ================= HAPUS TUGAS =================
+
+        function hapusTugas(id) {
+
+            tugas =
+                tugas.filter(function(item) {
+
+                    return item.id !== id;
+
+                });
+
+
+            simpanData();
+
+            tampilkanTugas();
+
+        }
+
+
+
+        // ================= FILTER =================
+
+        function ubahFilter(filter) {
+
+            filterSekarang = filter;
+
+
+            const buttons =
+                document.querySelectorAll(".filter-btn");
+
+
+            buttons.forEach(function(button) {
+
+                button.classList.remove(
+                    "bg-[#493334]",
+                    "text-white"
+                );
+
+                button.classList.add(
+                    "border",
+                    "border-[#eadfd6]",
+                    "text-[#594b4b]"
+                );
+
+            });
+
+
+            let tombol;
+
+
+            if (filter === "semua") {
+
+                tombol =
+                    document.getElementById("filterSemua");
+
+            }
+
+
+            if (filter === "aktif") {
+
+                tombol =
+                    document.getElementById("filterAktif");
+
+            }
+
+
+            if (filter === "selesai") {
+
+                tombol =
+                    document.getElementById("filterSelesai");
+
+            }
+
+
+            tombol.classList.remove(
+                "border",
+                "border-[#eadfd6]",
+                "text-[#594b4b]"
+            );
+
+
+            tombol.classList.add(
+                "bg-[#493334]",
+                "text-white"
+            );
+
+
+            tampilkanTugas();
+
+        }
+
+
+
+        // ================= HAPUS YANG SELESAI =================
+
+        function hapusSelesai() {
+
+            tugas =
+                tugas.filter(function(item) {
+
+                    return !item.selesai;
+
+                });
+
+
+            simpanData();
+
+            tampilkanTugas();
+
+        }
+
+
+
+        // ================= STATISTIK =================
+
+        function updateStatistik() {
+
+            const total =
+                tugas.length;
+
+
+            const selesai =
+                tugas.filter(function(item) {
+
+                    return item.selesai;
+
+                }).length;
+
+
+            const aktif =
+                total - selesai;
+
+
+            document.getElementById("totalCount")
+                .textContent = total;
+
+
+            document.getElementById("activeCount")
+                .textContent = aktif;
+
+
+            document.getElementById("completedCount")
+                .textContent = selesai;
+
+        }
+
+
+
+        // ================= LOCAL STORAGE =================
+
+        function simpanData() {
+
+            localStorage.setItem(
+                "tugasNatasya",
+                JSON.stringify(tugas)
+            );
+
+        }
+
+
+
+        // ================= LOAD =================
+
+        tampilkanTugas();
+
+    </script>
+
+</body>
+</html>

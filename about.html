@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tentang Saya - Monica Nova Yanti Marbun</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        paper: '#FFF7EF',
+                        ink: '#402A2E',
+                        accent: '#8B5E3C',
+                        teal: '#A67C52',
+                        line: '#D8BFA8',
+                    },
+                    fontFamily: {
+                        display: ['Fraunces', 'serif'],
+                        sans: ['Work Sans', 'sans-serif'],
+                        mono: ['IBM Plex Mono', 'monospace'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #FFF7EF;
+            background-image:
+                linear-gradient(rgba(64,42,46,0.045) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(64,42,46,0.045) 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+
+        .paper-card {
+            box-shadow: 0 1px 0 #D8BFA8,
+                        0 1px 2px rgba(64,42,46,0.05);
+        }
+    </style>
+</head>
+
+<body class="font-sans text-ink antialiased">
+
+    <!-- NAVBAR -->
+    <header class="sticky top-0 z-40 bg-paper/90 backdrop-blur border-b border-line">
+        <nav class="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
+
+            <a href="index.html" class="flex items-center gap-2 font-display text-lg font-medium">
+                <span class="w-8 h-8 rounded-full border-2 border-ink flex items-center justify-center text-sm">
+                    V
+                </span>
+                Vaa.dev
+            </a>
+
+            <ul class="flex items-center gap-8 text-sm font-medium">
+
+                <li>
+                    <a href="index.html" class="hover:text-accent">
+                        Beranda
+                    </a>
+                </li>
+
+                <li>
+                    <a href="about.html" class="text-accent">
+                        Tentang
+                    </a>
+                </li>
+
+                <li>
+                    <a href="projek.html" class="hover:text-accent">
+                        Projek
+                    </a>
+                </li>
+
+                <li>
+                    <a href="Tugas-js.html" class="hover:text-accent">
+                        Tugas JS
+                    </a>
+                </li>
+
+                <li>
+                    <a href="contact.html" class="hover:text-accent">
+                        Kontak
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+    </header>
+
+
+    <!-- HEADER ABOUT -->
+    <section class="max-w-6xl mx-auto px-6 pt-16 pb-12">
+
+        <p class="text-teal font-mono text-sm mb-4">
+            Tentang Saya
+        </p>
+
+        <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl leading-tight font-medium">
+            Mengenal Lebih Dekat
+        </h1>
+
+        <p class="mt-6 text-lg text-ink/75 max-w-2xl leading-relaxed">
+            Perjalanan saya dalam mempelajari teknologi, pemrograman,
+            dan pengembangan perangkat lunak.
+        </p>
+
+    </section>
+
+
+    <!-- TENTANG SAYA -->
+    <section class="max-w-6xl mx-auto px-6 pb-16">
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+
+            <!-- DESKRIPSI -->
+            <div class="paper-card bg-[#8B5E3C] text-white rounded-xl p-8">
+
+                <h2 class="font-display text-2xl font-medium mb-5">
+                    Halo, saya Monica!
+                </h2>
+
+                <p class="leading-relaxed mb-4">
+                    Saya Monica Nova Yanti Marbun, seorang mahasiswa
+                    Teknologi Rekayasa Perangkat Lunak yang memiliki
+                    ketertarikan terhadap dunia teknologi dan pengembangan
+                    perangkat lunak.
+                </p>
+
+                <p class="leading-relaxed mb-4">
+                    Saat ini saya sedang mengembangkan kemampuan dalam
+                    bidang pemrograman, khususnya pembuatan website dan
+                    aplikasi sederhana.
+                </p>
+
+                <p class="leading-relaxed">
+                    Saya percaya bahwa proses belajar adalah perjalanan yang
+                    terus berkembang. Oleh karena itu, saya senang mempelajari
+                    teknologi baru dan mencoba menerapkannya melalui berbagai
+                    projek.
+                </p>
+
+            </div>
+
+
+            <!-- DATA DIRI -->
+            <div class="paper-card bg-paper border border-line rounded-xl p-8">
+
+                <h2 class="font-display text-2xl font-medium mb-6">
+                    Profil Singkat
+                </h2>
+
+                <div class="space-y-5">
+
+                    <div class="border-b border-line pb-4">
+                        <p class="font-mono text-sm text-teal mb-1">
+                            Nama
+                        </p>
+                        <p class="text-lg font-medium">
+                            Monica Nova Yanti Marbun
+                        </p>
+                    </div>
+
+                    <div class="border-b border-line pb-4">
+                        <p class="font-mono text-sm text-teal mb-1">
+                            Status
+                        </p>
+                        <p class="text-lg font-medium">
+                            Mahasiswa
+                        </p>
+                    </div>
+
+                    <div class="border-b border-line pb-4">
+                        <p class="font-mono text-sm text-teal mb-1">
+                            Program Studi
+                        </p>
+                        <p class="text-lg font-medium">
+                            Teknologi Rekayasa Perangkat Lunak
+                        </p>
+                    </div>
+
+                    <div class="border-b border-line pb-4">
+                        <p class="font-mono text-sm text-teal mb-1">
+                            Lokasi
+                        </p>
+                        <p class="text-lg font-medium">
+                            Singaraja, Indonesia
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- KEAHLIAN -->
+    <section class="max-w-6xl mx-auto px-6 py-16 border-t border-line">
+
+        <div class="mb-8">
+            <p class="text-teal font-mono text-sm mb-2">
+                Kemampuan
+            </p>
+
+            <h2 class="font-display text-3xl font-medium">
+                Teknologi yang Sedang Saya Pelajari
+            </h2>
+        </div>
+
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+            <div class="paper-card bg-[#8B5E3C] text-white rounded-xl p-6">
+                <h3 class="font-display text-xl mb-2">
+                    HTML
+                </h3>
+                <p class="text-white/80 text-sm leading-relaxed">
+                    Membangun struktur dasar halaman website.
+                </p>
+            </div>
+
+            <div class="paper-card bg-[#8B5E3C] text-white rounded-xl p-6">
+                <h3 class="font-display text-xl mb-2">
+                    Tailwind CSS
+                </h3>
+                <p class="text-white/80 text-sm leading-relaxed">
+                    Membuat tampilan website yang responsif dan modern.
+                </p>
+            </div>
+
+            <div class="paper-card bg-[#8B5E3C] text-white rounded-xl p-6">
+                <h3 class="font-display text-xl mb-2">
+                    JavaScript
+                </h3>
+                <p class="text-white/80 text-sm leading-relaxed">
+                    Menambahkan interaksi dan fungsi pada website.
+                </p>
+            </div>
+
+            <div class="paper-card bg-[#8B5E3C] text-white rounded-xl p-6">
+                <h3 class="font-display text-xl mb-2">
+                    C++
+                </h3>
+                <p class="text-white/80 text-sm leading-relaxed">
+                    Mempelajari logika pemrograman dan pembuatan program.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TUJUAN -->
+    <section class="max-w-6xl mx-auto px-6 pb-20">
+
+        <div class="paper-card bg-ink text-paper rounded-xl p-8 md:p-10">
+
+            <p class="text-teal font-mono text-sm mb-3">
+                Tujuan Saya
+            </p>
+
+            <h2 class="font-display text-3xl font-medium mb-4">
+                Terus Belajar dan Berkembang
+            </h2>
+
+            <p class="text-paper/75 max-w-3xl leading-relaxed">
+                Saya ingin terus meningkatkan kemampuan di bidang Teknologi
+                Rekayasa Perangkat Lunak, memperdalam pemahaman pemrograman,
+                serta menghasilkan website dan aplikasi yang dapat memberikan
+                manfaat bagi pengguna.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="border-t border-line">
+
+        <div class="max-w-6xl mx-auto px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-ink/60">
+
+            <p>
+                &copy; <span id="year"></span> Monica Nova Yanti Marbun.
+            </p>
+
+            <div class="flex gap-5">
+                <a href="https://instagram.com/monicaaa_nova" target="_blank" class="hover:text-accent">
+                    Instagram
+                </a>
+
+                <a href="mailto:monicanova109@gmail.com" class="hover:text-accent">
+                    Email
+                </a>
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>

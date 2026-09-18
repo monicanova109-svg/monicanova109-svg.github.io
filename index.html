@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Monica Nova Yanti Marbun — Frontend Developer</title>
+
+<meta name="description" content="Portofolio Monica Nova Yanti Marbun">
+<link rel="icon" href="data:,">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        paper: '#FFF7EF',
+        ink: '#402A2E',
+        accent: '#8B5E3C',
+        teal: '#A67C52',
+        gold: '#C49A6C',
+        line: '#D8BFA8',
+      },
+      fontFamily: {
+        display: ['Fraunces', 'serif'],
+        sans: ['"Work Sans"', 'sans-serif'],
+        mono: ['"IBM Plex Mono"', 'monospace'],
+      },
+    }
+  }
+}
+</script>
+
+<style>
+body {
+  background-color: #FFF7EF;
+  background-image:
+    linear-gradient(rgba(64,42,46,0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(64,42,46,0.045) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.paper-card {
+  box-shadow: 0 1px 0 #D8BFA8, 0 1px 2px rgba(64,42,46,0.05);
+}
+
+::selection {
+  background: #8B5E3C;
+  color: white;
+}
+</style>
+</head>
+
+<body class="font-sans text-ink antialiased">
+
+<!-- NAVBAR -->
+<header class="sticky top-0 z-40 bg-paper/90 backdrop-blur border-b border-line">
+  <nav class="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
+
+    <a href="index.html" class="flex items-center gap-2 font-display text-lg font-medium">
+      <span class="w-8 h-8 rounded-full border-2 border-ink flex items-center justify-center text-sm">
+        V
+      </span>
+      Vaa.dev
+    </a>
+
+    <button id="menu-btn" aria-label="Buka menu" aria-expanded="false"
+      class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5">
+      <span class="w-6 h-0.5 bg-ink"></span>
+      <span class="w-6 h-0.5 bg-ink"></span>
+      <span class="w-6 h-0.5 bg-ink"></span>
+    </button>
+
+    <ul class="hidden md:flex items-center gap-8 text-sm font-medium">
+      <li><a href="index.html" class="text-accent">Beranda</a></li>
+      <li><a href="about.html" class="hover:text-accent">Tentang</a></li>
+      <li><a href="projek.html" class="hover:text-accent">Projek</a></li>
+      <li><a href="Tugas-js.html" class="hover:text-accent">Tugas JS</a></li>
+      <li><a href="contact.html" class="hover:text-accent">Kontak</a></li>
+    </ul>
+
+  </nav>
+</header>
+
+
+<!-- HERO -->
+<section class="max-w-6xl mx-auto px-6 pt-16 pb-20 grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
+
+  <div>
+
+    <p class="text-teal font-mono text-sm mb-4">
+      Haii, Sayaaa 🙌🏻
+    </p>
+
+    <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.1] font-medium">
+      Monica Nova Yanti Marbun
+    </h1>
+
+    <p class="mt-6 text-base sm:text-lg text-ink/75 max-w-xl leading-relaxed">
+      Saya Monica Nova Yanti Marbun, mahasiswa Teknologi Rekayasa Perangkat Lunak yang memiliki minat dalam pengembangan website dan aplikasi. Saya senang mempelajariteknologi baru serta mengembangkan solusi digital yang kreatif,
+  fungsional, dan mudah digunakan.
+    </p>
+
+    <div class="mt-8 flex flex-wrap gap-4">
+
+      <a href="projek.html"
+        class="px-6 py-3 bg-ink text-paper rounded-lg font-medium hover:bg-accent transition-colors">
+        Lihat Projek
+      </a>
+
+      <a href="contact.html"
+        class="px-6 py-3 border border-ink rounded-lg font-medium hover:border-accent hover:text-accent transition-colors">
+        Hubungi Saya
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <div class="paper-card bg-ink text-paper rounded-xl p-6 font-mono text-sm leading-relaxed">
+
+    <div class="flex gap-1.5 mb-4">
+      <span class="w-2.5 h-2.5 rounded-full bg-accent/80"></span>
+      <span class="w-2.5 h-2.5 rounded-full bg-teal/80"></span>
+      <span class="w-2.5 h-2.5 rounded-full bg-paper/40"></span>
+    <div class="relative w-full h-80 sm:h-96 rounded-xl overflow-hidden border-4 border-[#8B5E3C] bg-[#8B5E3C]">
+
+    <img 
+        src="bg muka ku.png" 
+        alt="Foto Monica Nova Yanti Marbun"
+        class="w-full h-full object-cover"
+    >
+</div>
+
+</section>
+
+
+<!-- ALAT YANG BIASA SAYA PAKAI -->
+<section class="max-w-6xl mx-auto px-6 py-16 border-t border-line">
+
+  <h2 class="font-display text-2xl sm:text-3xl font-medium mb-2">
+    Alat yang biasa saya pakai
+  </h2>
+
+  <p class="text-ink/70 mb-6">
+    Teknologi yang saya gunakan untuk belajar dan mengembangkan projek.
+  </p>
+
+  <ol class="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-2xl">
+
+    <li class="paper-card bg-[#8B5E3C] text-white rounded-lg p-4 border border-line">
+      1. Tailwind CSS
+    </li>
+
+    <li class="paper-card bg-[#8B5E3C] text-white rounded-lg p-4 border border-line">
+      2. JavaScript
+    </li>
+
+    <li class="paper-card bg-[#8B5E3C] text-white rounded-lg p-4 border border-line">
+      3. CSS
+    </li>
+
+    <li class="paper-card bg-[#8B5E3C] text-white rounded-lg p-4 border border-line">
+      4. C++
+    </li>
+
+  </ol>
+
+</section>
+
+
+<!-- PROJEK TERBARU -->
+<section class="max-w-6xl mx-auto px-6 py-16 border-t border-line">
+
+  <h2 class="font-display text-2xl sm:text-3xl font-medium mb-2">
+    Beberapa projek terbaru
+  </h2>
+
+  <p class="text-ink/70 mb-6">
+    Projek yang sedang dan pernah saya kerjakan.
+  </p>
+
+  <ol class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl">
+
+    <li class="paper-card bg-[#8B5E3C] text-white rounded-xl p-6 border border-line">
+      2. Kalkulator sederhana
+    </li>
+
+  </ol>
+
+</section>
+
+
+<!-- CTA -->
+<section class="max-w-6xl mx-auto px-6 pb-20">
+
+  <div class="paper-card bg-ink text-paper rounded-xl p-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+
+    <div>
+      <h2 class="font-display text-2xl font-medium mb-2">
+        Ada projek yang ingin dikerjakan bersama?
+      </h2>
+
+      <p class="text-paper/70 max-w-md">
+        Saya terbuka untuk , kolaborasi projek kampus, atau sekadar diskusi soal frontend.
+      </p>
+    </div>
+
+    <a href="contact.html"
+      class="shrink-0 px-6 py-3 bg-accent text-white rounded-lg font-medium hover:bg-paper hover:text-ink transition-colors">
+      Kirim Pesan
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer class="border-t border-line">
+
+  <div class="max-w-6xl mx-auto px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-ink/60">
+
+    <p>
+      &copy; <span id="year"></span> Monica Nova Yanti Marbun.
+      Dibangun dengan Tailwind CSS.
+    </p>
+
+    <div class="flex gap-5">
+
+      <a href="https://instagram.com/monicaaa_nova" target="_blank" class="hover:text-accent">
+        Instagram
+      </a>
+
+      <a href="mailto:monicanova109@gmail.com" class="hover:text-accent">
+        Email
+      </a>
+    </div>
+
+  </div>
+
+</footer>
+
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+const menuBtn = document.getElementById('menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+
+if (menuBtn && mobileMenu) {
+  menuBtn.addEventListener('click', () => {
+    const isOpen = !mobileMenu.classList.contains('hidden');
+    mobileMenu.classList.toggle('hidden');
+    menuBtn.setAttribute('aria-expanded', String(!isOpen));
+  });
+}
+</script>
+
+</body>
+</html>
